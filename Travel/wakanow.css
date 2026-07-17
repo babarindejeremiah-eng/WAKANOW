@@ -4,8 +4,20 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+html{
+  overflow-x: hidden;
+}
 body{
-  background-color: #e6edf5
+  background-color: #e6edf5;
+  overflow-x: hidden;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+.first{
+  background-size: cover;
+  background-position: center;
 }
 .first{
   /* background-image: url("Web_Banner.webp"); */
@@ -24,6 +36,13 @@ body{
   justify-content: center;
   gap: 20px;
   color: white;
+}
+.one-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 .onee{
   display: flex;
@@ -294,7 +313,9 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     .btn {
       position: absolute;
       top: 50%;
-      width: 1250px;
+      left: 0;
+      right: 0;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       transform: translateY(-50%);
@@ -453,8 +474,7 @@ justify-content: center;
      .slider-btnq {
   position: absolute;
   top: 15px; /* positions above the slider */
-  left: 1300px;
-  transform: translateX(-50%);
+  right: 20px;
   display: flex;
   gap: 20px; /* small space between the two buttons */
   z-index: 10;
@@ -911,4 +931,463 @@ footer {
 
 .nav-links li a:hover {
   color: #08a5e3;
+}
+
+/* ============================= */
+/* Utility classes (replacing former inline styles so they can be made responsive) */
+/* ============================= */
+
+.section-wrap {
+  margin-left: 100px;
+  margin-right: 20px;
+}
+
+.divider {
+  border-top: black dotted 1px;
+  width: 1300px;
+  max-width: 90%;
+  margin-left: 90px;
+}
+
+.note-caption {
+  margin-left: 450px;
+}
+
+.email-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.email-input {
+  width: 300px;
+  max-width: 100%;
+  padding: 10px;
+}
+
+.store-row {
+  justify-content: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Hamburger toggle (hidden checkbox + label), shown only on small screens */
+.menu-toggle-checkbox {
+  display: none;
+}
+
+.hamburger-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #333;
+  user-select: none;
+}
+
+.topbar-hamburger {
+  color: white;
+}
+
+/* Flight search table */
+.flight-table {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  border-collapse: collapse;
+}
+
+.flight-table th {
+  border: rgb(219, 217, 217) 1px solid;
+  padding: 10px;
+  text-align: left;
+}
+
+.flight-table th:nth-child(1),
+.flight-table th:nth-child(2) {
+  width: 24%;
+}
+
+.flight-table th:nth-child(5) {
+  width: 22%;
+}
+
+
+/* ===================================================================== */
+/* RESPONSIVE OVERRIDES                                                  */
+/* Everything below scales the fixed-pixel desktop layout down for       */
+/* tablets and phones. Written mobile-narrowing (max-width) to match     */
+/* the breakpoints already used elsewhere in this file.                  */
+/* ===================================================================== */
+
+/* ---------- Large desktop / laptop (<=1400px) ---------- */
+@media (max-width: 1400px) {
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ion,
+  .ionn {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 60px;
+  }
+
+  .slider-containert {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  .slider-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ---------- Tablets / small laptops (<=1200px) ---------- */
+@media (max-width: 1200px) {
+  .box2 {
+    width: 92%;
+    margin-left: 4%;
+  }
+
+  .box1 {
+    width: 80%;
+    left: 10%;
+  }
+
+  .para,
+  .paraa {
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .section-wrap {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+/* ---------- Tablets (<=992px) ---------- */
+@media (max-width: 992px) {
+  .one {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .note-caption {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .button-second {
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+
+  .navbar-items {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 10px;
+  }
+}
+
+/* ---------- Tablets / large phones (<=900px): hamburger kicks in ---------- */
+@media (max-width: 900px) {
+  /* Sticky top navbar collapses into a hamburger */
+  .nav-content {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hamburger-icon {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 12px 5px;
+  }
+
+  #nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  /* Top utility bar collapses into a hamburger too */
+  .one {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+  }
+
+  .one-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 15px 20px;
+    z-index: 20;
+    border-radius: 0 0 8px 8px;
+  }
+
+  #topbar-toggle:checked ~ .one-links {
+    display: flex;
+  }
+
+  .topbar-hamburger {
+    display: block;
+  }
+
+  .onee {
+    justify-content: flex-start;
+  }
+
+  /* Search widget starts stacking */
+  .container {
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .box1 {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .box2 {
+    position: relative;
+    top: 0;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .note {
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 12px;
+  }
+}
+
+/* ---------- Phones / small tablets (<=768px) ---------- */
+@media (max-width: 768px) {
+  .first {
+    padding: 15px;
+  }
+
+  .nav-content {
+    padding: 0 10px;
+  }
+
+  .sticky-navbar {
+    padding: 12px 20px;
+  }
+
+  /* Flight search table stacks into cards */
+  .flight-table,
+  .flight-table thead,
+  .flight-table tbody,
+  .flight-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .flight-table th {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .flight-table h1 {
+    font-size: 22px;
+  }
+
+  .leftright {
+    position: static;
+    display: inline-block;
+    margin: 10px auto;
+  }
+
+  .search-btn button {
+    width: 90%;
+    padding: 10px 0;
+  }
+
+  .button-second {
+    flex-direction: column;
+  }
+
+  .button-second > div {
+    width: 100%;
+  }
+
+  /* Sliders */
+  .slider-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .slider-wrapperq {
+    padding: 15px;
+  }
+
+  .box-containerq {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .boxq {
+    width: 90% !important;
+  }
+
+  .slider-headerq {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* App promo / deals sections */
+  .ion,
+  .ionn {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 25px 5%;
+    margin: 20px 0;
+  }
+
+  .ion h1,
+  .ionn h1 {
+    font-size: 22px;
+  }
+
+  .store-row {
+    justify-content: center;
+  }
+
+  .email-row {
+    justify-content: center;
+  }
+
+  /* Link column sections */
+  .section-wrap {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .para,
+  .paraa {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .divider {
+    margin-left: 20px;
+    width: calc(100% - 40px);
+  }
+
+  .modal {
+    width: 92vw;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-container {
+    flex-direction: column;
+  }
+
+  .modal-container img {
+    width: 60% !important;
+  }
+
+  .form input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ---------- Small phones (<=480px) ---------- */
+@media (max-width: 480px) {
+  .one {
+    padding: 5px 0;
+  }
+
+  .one > div:first-child img {
+    width: 110px;
+  }
+
+  .dropdown-content {
+    left: 0;
+    width: 180px;
+  }
+
+  .modal-btn {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .flight-table h1 {
+    font-size: 18px;
+  }
+
+  .search-btn button {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+
+  .email-input {
+    width: 100%;
+  }
+
+  .bbuttonn {
+    width: 100%;
+  }
+
+  .slider-headert h2 {
+    font-size: 1.2rem;
+  }
+
+  .footer-container {
+    gap: 30px;
+  }
+
+  .floating-buttons {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  h4 {
+    text-align: center;
+  }
 }
